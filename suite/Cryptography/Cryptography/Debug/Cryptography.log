@@ -1,0 +1,5 @@
+﻿  bin_func.cpp
+  sha256.cpp
+C:\Dev\test\suite\Cryptography\Cryptography\src\sha256.cpp(22,22): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Cryptography.vcxproj -> C:\Dev\test\suite\Cryptography\Debug\Cryptography.lib
