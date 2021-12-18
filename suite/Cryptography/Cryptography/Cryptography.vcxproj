@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\hash.h" />
+    <ClInclude Include="src\support.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\bin_func.cpp" />

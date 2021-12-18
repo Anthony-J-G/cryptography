@@ -18,6 +18,9 @@
     <ClInclude Include="src\hash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\support.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\sha256.cpp">
