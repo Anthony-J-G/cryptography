@@ -11,6 +11,8 @@
 
 
 // Constants
+#define BLOCK_SIZE 512
+#define SENTENCE_LENGTH_SPACING 64
 
 
 

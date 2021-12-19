@@ -12,14 +12,13 @@
 
 
 
-// Constants
-#define WORD_LEN 8
-#define BLOCK_SIZE 512
-#define SENTENCE_LENGTH_SPACING 64
 
 
 
 namespace binary_functions {
+	// Constants
+	#define WORD_LEN 8
+	#define MAX_STRING_LEN 50
 
 	/*	Structure that holds an array of binary represented words
 	*		as well as any useful supporting data

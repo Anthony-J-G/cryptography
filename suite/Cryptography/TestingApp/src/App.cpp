@@ -32,10 +32,11 @@ int main(int argc, char* argv[]) {
 
 	// File Flag
 	bool fflag = 0; 
-	string filename = "";
+	string ifilename = "";
 
 	// Output Flag
 	bool oflag = 0; 
+	string ofilename = "";
 
 	// Input Flag
 	bool iflag = 0; 
@@ -50,11 +51,13 @@ int main(int argc, char* argv[]) {
 		bool fflag_check = (tmp.compare(FILE_FLAG_1) == 0) + (tmp.compare(FILE_FLAG_2) == 0);
 		if (fflag_check * (i != (argc - 1))) {
 			fflag = 1; // Set flie flag if file input is wanted
-			filename = argv[i + 1];
+			ifilename = argv[i + 1];
 		}
 		bool oflag_check = (tmp.compare(OUTPUT_FLAG_1) == 0) + (tmp.compare(OUTPUT_FLAG_2) == 0);
 		if (oflag_check * (i != (argc - 1))) {
-			oflag = 1;
+			oflag = 1; // Set output flag if execution produces an output file
+			string ofilename = argv[i + 1];
+
 		}
 		bool iflag_check = (tmp.compare(INPUT_FLAG_1) == 0) + (tmp.compare(INPUT_FLAG_2) == 0);
 		if (iflag_check) {
@@ -67,16 +70,16 @@ int main(int argc, char* argv[]) {
 		}
 	}
 	// Check to see if file exists
-	ifstream fptr{ filename };
+	ifstream fptr{ ifilename };
 	if (fflag && !fptr) {
-		printf("Error: file '%s' not found in local directory\n", filename.c_str());
+		printf("Error: file '%s' not found in local directory\n", ifilename.c_str());
 		system("pause");
 		return 1;
 	}
 	// Read data from a file
 	string fileread = "";
 	while (fflag && fptr) {
-		// read stuff from the file into a string and print it
+		// Read strings from the file and store in 'fileread' var
 		string file_data;
 		getline(fptr, file_data);
 		fileread = fileread + file_data;
@@ -84,7 +87,7 @@ int main(int argc, char* argv[]) {
 
 	string input = "";
 	if (iflag) {
-		for (unsigned int i = input_loc; i < argc ; i++) {
+		for (int i = input_loc; i < argc ; i++) {
 			string tmp = argv[i];
 			input = input + tmp;
 		}
